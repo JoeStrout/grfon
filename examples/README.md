@@ -49,7 +49,7 @@ info: {
 
 This example is a "squawk mod" for High Frontier.  It contains several key/value pairs (title, type, author, etc.), as well as an unkeyed list of collections (just one in this case) which contain the actual squawk data.
 
-Notice how the "author" key maps to a sub-collection, which itself contains key/value pairs for name, email, and www.
+Notice how the "author" key maps to a sub-collection, which itself contains key/value pairs for name, email, and ww​w.
 
 This file also demonstrates how comments and blank lines can be used to make a file more comprehensible.
 
