@@ -1,0 +1,29 @@
+// First test of a squawk mod
+title: Squawk Test 1
+type: squawk
+author: {
+    name:    Joe Strout
+    email:    support@highfrontier.com
+    www:    http://HighFrontier.com
+}
+context: MainMenu
+
+// Now follow batches of squawks.  Each batch is an unnamed collection
+// containing:
+//        when: a condition, or list of conditions
+//        urgency: a value from 0 to 1
+//        squawks: a list of actual squawks; each a string,
+//            or a collection containing text, icon, and/or user.
+// In a MainMenu squawk mod, there's not much point in having more
+// than one batch.  But, that batch can have multiple squawks to
+// choose from.
+
+{
+    when: RandomPercent < 50
+    squawks: {
+        This is a custom squawk!
+        Mods rock!
+        Making mods is super fun!
+        { text: Is this mod on?; icon: FaceWorried; user: ModMan }
+    }
+}

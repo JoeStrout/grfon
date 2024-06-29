@@ -1,0 +1,51 @@
+// Built-In Project Nodes
+title: Standard Projects
+type: project
+author: {
+    name:   Strout & Sons
+    email:  support@highfrontier.com
+    www:    http://HighFrontier.com
+}
+
+{   shortName: FuelDepot
+    displayName: Fuel Depot
+    description: An orbital fuel depot enables buying and selling of fuel in orbit.  This opens new business opportunities, and can resupply larger facilities in cislunar space.
+    xpCost: 5
+}
+
+{   shortName: NEARetrieval
+    displayName: NEA Retrieval
+    benefit: LowerCost
+    description: The first retrieval of a Near Earth Asteroid provides a cache of valuable materials in orbit, and provides experience in manipulating large orbits in space.
+    xpCost: 5
+}
+
+{   shortName: SSP
+    displayName: Space Solar Power
+    benefit: NewPart
+    description: A space solar power station captures the abundant free energy of the Sun, and can beam it to customers anywhere in cislunar space.  The recipient needs only a simple microwave rectenna to receive steady, low-cost electricity.
+    xpCost: 5
+}
+
+{   shortName: NukePower
+    displayName: Nuclear Power
+    description: Fission plants aren't new, but only a few have been flown in space, and those were very small.  Somebody's got to build a big one — and once it's been done once, we'll know how to power our cities with them!
+    benefit: NewPart
+    xpCost: 3
+}
+
+{   shortName: L1Station
+    displayName: L1 Station
+    benefit: NewOrbit
+    description: A space station at the Earth-Moon L1 point is always in view of both Earth and Moon, and easy to reach from either.  It forms a critical transfer point for people, goods, and materials throughout cislunar space.
+    prereqs: { FuelDepot; SSP }
+    xpCost: 5
+}
+
+{   shortName: GasGun
+    displayName: Gas Gun Launcher
+    benefit: LowerCost
+    description: Basically a mountain-sized gun for launching things from Earth into space, a gas gun would squish passengers into a thin smear on the back wall... but it's great for launching bulk materials very cheaply.
+    prereqs: { FuelDepot }
+    xpCost: 7
+}

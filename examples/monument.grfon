@@ -1,0 +1,28 @@
+// This mod creates a monument which can be manually added to your city.
+title: Founder Monument
+type: building
+subtype: manual decoration
+author: {
+    name:   Joe Strout
+    email:  support@highfrontier.com
+    www:    http://HighFrontier.com
+}
+model: {
+    geometry: Monument.obj
+    texture: Monument-Diffuse.jpg
+    scale: 0.01
+    position: 0 0 0
+}
+radius: 10
+icon: ButtonIcon.png
+cost: { initial: 0; perTurn: 0 }
+limit: 1
+effect: {
+    radius: 100
+    happiness: +10
+}
+info: {
+    mouseover: Monument
+    title: Honoring Bill T. Cat
+    desc: Visionary, pioneer, and\nhonored founder whose\ncontribution will always\nbe remembered.
+}
