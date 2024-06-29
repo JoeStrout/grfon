@@ -4,7 +4,13 @@ Fortunately, GRFON is very easy to read and write.  You'll probably grasp everyt
 
 GRFON files are made up of two basic kinds of data: **values** and **collections**.
 
-A **value** is simply some text or a number.  GRFON does not distinguish between these, and no quotation marks are needed around text strings.  The only characters to be careful of are semicolon `;`, colon `:`, curly brace `{`, backslash `\`, and two forward slashes `//`, all of which have special meaning in GRFON.  When you want one of those to just be the character itself, you can avoid the special meaning by preceding it with a backslash.
+A **value** is simply some text or a number.  GRFON does not distinguish between these, and no quotation marks are needed around text strings.  
+
+> ### Special Characters
+> The only characters to be careful of are semicolon `;`, colon `:`, curly brace `{`, backslash `\`, and two forward slashes `//`, all of which have special meaning in GRFON.  When you want one of those to just be the character itself, you can avoid the special meaning by preceding it with a backslash.
+>
+> The exception to this rule is `://`, which is always interpreted as a simple string (because URLs would be annoyingly hard to write correctly).
+
 
 So, all of the following are valid GRFON values.
 
@@ -14,6 +20,7 @@ The Ultimate Answer to Life, The Universe, and Everything
 3.14157
 Spam and Eggs
 That was then\; this is now.
+https://miniscript.org
 ```
 
 A **collection** is a bunch of values grouped together, some of which may be identified by unique string keys, and others which are only identified by their order in the collection.  These are called "key/value pairs" and "unkeyed values" respectively.  One collection may have any number of key/value pairs and unkeyed values.  However, among the key/value pairs, each key must be unique.
@@ -70,6 +77,7 @@ Finally, a collection may itself be used anywhere a value is expected.  That is,
         author: unknown
         lastRev: 4000 BCE
         printColor: gold
+        url: http://example.com
     }
     { name: Adam; job: gardener; age: 26 }
     { name: Beth; job: programmer; age: 24 }

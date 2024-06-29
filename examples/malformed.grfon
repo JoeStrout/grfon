@@ -1,0 +1,14 @@
+// This is an example of a malformed GRFON file.
+// We have a what looks like a key/value pair in a collection,
+// but with no value before the collection is closed.
+
+// Behavior of GRFON in this case is undefined, but it should
+// handle it either by throwing an error, or by recovering
+// gracefully and reporting the rest of the data correctly
+// (e.g., bamf should be 42 in this example).
+
+foo: bar
+baz: {
+    this is the bug: //right here
+}
+bamf: 42

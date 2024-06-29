@@ -4,7 +4,7 @@ type: squawk
 author: {
     name:    Joe Strout
     email:    support@highfrontier.com
-    www:    http://HighFrontier.com
+    www:    http\:\//HighFrontier.com
 }
 context: MainMenu
 

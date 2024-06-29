@@ -51,6 +51,8 @@ This example is a "squawk mod" for High Frontier.  It contains several key/value
 
 Notice how the "author" key maps to a sub-collection, which itself contains key/value pairs for name, email, and ww​w.
 
+Also note that, even though colons and `//` have special meaning in GRFON, these don't need to be backslash-escaped when they occur together, as in the URL shown here.
+
 This file also demonstrates how comments and blank lines can be used to make a file more comprehensible.
 
 ```
