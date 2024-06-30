@@ -23,6 +23,17 @@ That was then\; this is now.
 https://miniscript.org
 ```
 
+> ### Backslash-Escaped Special Characters
+> Certain characters following a backslash have special meaning.  The official set of these supported by GROFN is shown in this table:
+> | Sequence | Unicode (Meaning) |
+> |----------| ----------------- |
+> | \b | 8 (backspace) |
+> | \t | 9 (tab) |
+> | \n | 10 (newline) |
+> | \f | 12 (page break) |
+> | \r | 13 (carriage return |
+
+
 A **collection** is a bunch of values grouped together, some of which may be identified by unique string keys, and others which are only identified by their order in the collection.  These are called "key/value pairs" and "unkeyed values" respectively.  One collection may have any number of key/value pairs and unkeyed values.  However, among the key/value pairs, each key must be unique.
 
 A key/value pair is given with the key, followed by a colon, and then the value.  Key/value pairs, as well as unkeyed values, are separated within a collection by either a semicolon (;) or a line break.  Finally, a collection is always wrapped in curly braces, except for the very top-level collection that represents a GRFON document; curly braces aren't needed in that case.

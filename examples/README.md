@@ -12,7 +12,7 @@ This GRFON file is part of a mod for High Frontier.  It defines a monument build
 - Most key/value pairs are separated simply by line breaks; no extra punctuation is needed.  But you can use a semicolon to separate multiple items on one line, as shown with the "cost" item.
 - Numbers can include decimal points or not, as needed.
 - The model position is represented with three numbers, separated by a space.  (This is a convention adopted by High Frontier and not imposed by GRFON.)
-- Line breaks (see info desc at the bottom of the file) are represented here with \n; this too is something supported by the game, passed through as-is by GRFON.
+- Line breaks (see info desc at the bottom of the file) are represented here with \n; each \n is converted to a carriage-return character (Unicode 13) by the GRFON parser.
 
 ```
 // This mod creates a monument which can be manually added to your city.
