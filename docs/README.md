@@ -24,7 +24,8 @@ https://miniscript.org
 ```
 
 > ### Backslash-Escaped Special Characters
-> Certain characters following a backslash have special meaning.  The official set of these supported by GROFN is shown in this table:
+> Certain characters following a backslash have special meaning.  The official set of these supported by GRFON is shown in this table:
+>
 > | Sequence | Unicode (Meaning) |
 > |----------| ----------------- |
 > | \b | 8 (backspace) |
@@ -32,7 +33,8 @@ https://miniscript.org
 > | \n | 10 (newline) |
 > | \f | 12 (page break) |
 > | \r | 13 (carriage return |
-
+>
+> A backslash followed by any other character is parsed as just that other character, e.g., `\x` comes through as simply `x`.
 
 A **collection** is a bunch of values grouped together, some of which may be identified by unique string keys, and others which are only identified by their order in the collection.  These are called "key/value pairs" and "unkeyed values" respectively.  One collection may have any number of key/value pairs and unkeyed values.  However, among the key/value pairs, each key must be unique.
 
