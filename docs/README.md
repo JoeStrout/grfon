@@ -9,7 +9,7 @@ A **value** is simply some text or a number.  GRFON does not distinguish between
 > ### Special Characters
 > The only characters to be careful of are semicolon `;`, colon `:`, curly brace `{`, backslash `\`, and two forward slashes `//`, all of which have special meaning in GRFON.  When you want one of those to just be the character itself, you can avoid the special meaning by preceding it with a backslash.
 >
-> The exception to this rule is `://`, which is always interpreted as a simple string (because URLs would be annoyingly hard to write correctly).
+> The exception to this rule is `://`, which is always interpreted as a simple string (because otherwise, URLs would be annoyingly hard to write correctly).
 
 
 So, all of the following are valid GRFON values.

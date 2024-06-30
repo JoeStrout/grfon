@@ -61,8 +61,8 @@ title: Squawk Test 1
 type: squawk
 author: {
     name:    Joe Strout
-    email:    support@highfrontier.com
-    www:    http://HighFrontier.com
+    email:   support@highfrontier.com
+    www:     http://HighFrontier.com
 }
 context: MainMenu
 
