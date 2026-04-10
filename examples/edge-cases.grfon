@@ -1,0 +1,92 @@
+// GRFON edge-cases example
+// This file demonstrates parsing rules that may be non-obvious.
+// Each section includes a comment describing the expected parsed result.
+
+// --- Backslash escaping ---
+
+// A semicolon, colon, open/close brace, and double-slash within a value,
+// each escaped with a backslash.
+semicolon:  That was then\; this is now.
+colon:      ratio is 1\:2
+openBrace:  a \{block\} of text
+slash:      the end \/\/ not a comment
+
+// A double backslash produces a single literal backslash.
+// Expected string value: C:\Users\Bob
+path:       C:\\Users\\Bob
+
+// --- Number vs. string ---
+
+// These look like numbers and will be parsed as numbers.
+integer:    42
+negative:   -7
+decimal:    3.14
+
+// A leading backslash forces the value to be kept as a string.
+// Expected string value: "42" (not the number 42)
+stringNum:  \42
+
+// Similarly for other special bare values.
+// Expected string value: "null" (not a null/nil value)
+stringNull: \null
+
+// Expected string values "true" and "false" (not booleans)
+stringTrue:  \true
+stringFalse: \false
+
+// --- The :// exception ---
+
+// Colons followed immediately by // are NEVER treated as a key separator
+// or the start of a comment.  This makes URLs work without any escaping.
+// Expected value: https://example.com
+httpsUrl:   https://example.com
+httpUrl:    http://example.com
+
+// The :// exception also applies in unusual contexts.
+weirdUrl:   foo://bar/baz?x=1&y=2
+
+// --- Backslash escape sequences ---
+
+// Tab, newline, and carriage-return via backslash sequences.
+// Expected: a tab character between the words
+withTab:    hello\tworld
+
+// Expected: two lines of text stored as one value
+twoLines:   first line\nsecond line
+
+// Unicode code point: \u00e9 is é (e with acute accent)
+// Expected string value: café
+accented:   caf\u00e9
+
+// Unicode for smiley face (U+263A)
+smiley:     \u263A
+
+// --- Whitespace trimming ---
+
+// Leading and trailing whitespace around keys and values is ignored.
+// All three of these produce the same result: key "x" with value "hello"
+x:   hello
+x:hello
+x:        hello
+
+// --- Empty and nested collections ---
+
+// An empty collection is valid and represents an empty map.
+// Expected: an empty map/dict
+emptyMap: {}
+
+// A collection used as a value.
+// Expected: nested map with keys a and b
+nested: { a: 1; b: 2 }
+
+// --- Mixed keyed and unkeyed values ---
+
+// When a collection has both keyed pairs and unkeyed values,
+// the unkeyed values are gathered into a list under the key "_".
+// Expected: { label: "Presidents", _: ["Washington", "Adams", "Jefferson"] }
+mixed: {
+    label: Presidents
+    Washington
+    Adams
+    Jefferson
+}

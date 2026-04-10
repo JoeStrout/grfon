@@ -7,7 +7,7 @@ GRFON files are made up of two basic kinds of data: **values** and **collections
 A **value** is simply some text or a number.  GRFON does not distinguish between these, and no quotation marks are needed around text strings.  
 
 > ### Special Characters
-> The only characters to be careful of are semicolon `;`, colon `:`, curly brace `{`, backslash `\`, and two forward slashes `//`, all of which have special meaning in GRFON.  When you want one of those to just be the character itself, you can avoid the special meaning by preceding it with a backslash.
+> The only characters to be careful of are semicolon `;`, colon `:`, curly braces `{` and `}`, backslash `\`, and two forward slashes `//`, all of which have special meaning in GRFON.  When you want one of those to just be the character itself, you can avoid the special meaning by preceding it with a backslash.
 >
 > The exception to this rule is `://`, which is always interpreted as a simple string (because otherwise, URLs would be annoyingly hard to write correctly).
 
@@ -28,13 +28,25 @@ https://miniscript.org
 >
 > | Sequence | Unicode (Meaning) |
 > |----------| ----------------- |
-> | \b | 8 (backspace) |
-> | \t | 9 (tab) |
-> | \n | 10 (newline) |
-> | \f | 12 (page break) |
-> | \r | 13 (carriage return |
+> | \\\\ | 92 (backslash itself) |
+> | \\b | 8 (backspace) |
+> | \\t | 9 (tab) |
+> | \\n | 10 (newline) |
+> | \\f | 12 (page break) |
+> | \\r | 13 (carriage return) |
+> | \\uXXXX | Unicode code point given by 4 hex digits, e.g. `\u00e9` → é |
 >
-> A backslash followed by any other character is parsed as just that other character, e.g., `\x` comes through as simply `x`.
+> A backslash followed by any other character is parsed as just that other character, e.g., `\x` comes through as simply `x`.  This means you can write `\;`, `\:`, `\{`, `\}`, and `\/\/` to get a literal semicolon, colon, open brace, close brace, or double-slash.
+
+> ### Values and Types
+> Values in GRFON are text strings, but parsers will typically convert any value that looks like a number to a numeric type automatically.  For example, `42` and `3.14` will usually come back as numbers rather than strings.
+>
+> If you want a value to remain a string even though it looks like a number, precede it with a backslash: `\42` stores the string `"42"` rather than the number 42.  The same backslash prefix also prevents interpretation of the special string values `null`, `true`, and `false`.
+>
+> The special value `null` typically represents "no value" or "not present."  The values `true` and `false` may be interpreted as booleans by the parser, depending on the implementation.  If you want these to be literal strings, use `\null`, `\true`, and `\false`.
+
+> ### Whitespace
+> Leading and trailing whitespace (spaces and tabs) around keys and values is ignored.  This lets you align values for readability.  A newline or a semicolon marks the end of each entry; whitespace around these is also ignored.
 
 A **collection** is a bunch of values grouped together, some of which may be identified by unique string keys, and others which are only identified by their order in the collection.  These are called "key/value pairs" and "unkeyed values" respectively.  One collection may have any number of key/value pairs and unkeyed values.  However, among the key/value pairs, each key must be unique.
 
@@ -80,6 +92,9 @@ And here's an example that mixes the two; it has both keyed and unkeyed values. 
 
 Note how, just for fun, we combined three of the unkeyed values onto one line using semicolons.  It makes no difference whatsoever to the data represented, so you should format your GRFON files in whatever way is easiest for you.
 
+> ### Mixed Keyed and Unkeyed Collections
+> When a collection contains both key/value pairs and unkeyed values, parsers collect the unkeyed values into a list and store that list under the special key `"_"`.  For example, the collection above would have `author`, `lastEdit`, and `note` as regular keys, plus `"_"` mapping to the list `[Washington, Adams, Jefferson, Madison, Monroe]`.
+
 Finally, a collection may itself be used anywhere a value is expected.  That is, you can have a collection as part of a key/value pair, or as an unkeyed value, in another collection.  These may be nested to arbitrary depth.  Here's a simple example with some nested data.
 
 ```
@@ -101,6 +116,9 @@ Finally, a collection may itself be used anywhere a value is expected.  That is,
 ```
 
 The above example also illustrates comments, which can be added to GRFON files for the benefit of human readers.  These comments start with a double forward slash `//` and continue to the end of the line, and are ignored by any computer program that reads the data.
+
+> ### Empty Collections
+> An empty collection `{}` is valid and represents an empty map (no keys, no values).
 
 And about that's all there is to GRFON.  It does not define a standard format for dates, 3D vectors, or other complex data types, but the host app (whatever is reading your GRFON data) will probably define formats for those as needed.
 

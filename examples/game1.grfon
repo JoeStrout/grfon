@@ -1,0 +1,2229 @@
+money: 1234
+fuel: 9
+maxFuel: 12
+playerShip: {
+  designName: Wren
+  hp: 19
+  systems: {
+    {
+      name: Reactor
+      maxPower: 8
+      setPoint: 8
+      repairLevel: 5
+      disabled: 0
+    }
+    {
+      name: Doors
+      maxPower: 1
+      setPoint: 1
+      repairLevel: 1
+      disabled: 0
+    }
+    {
+      name: Engines
+      maxPower: 3
+      setPoint: 3
+      repairLevel: 3
+      disabled: 0
+    }
+    {
+      name: Controls
+      maxPower: 2
+      setPoint: 2
+      repairLevel: 2
+      disabled: 0
+    }
+    {
+      name: O2
+      maxPower: 1
+      setPoint: 1
+      repairLevel: 1
+      disabled: 0
+    }
+  }
+  cargo: {
+    {
+      col: 0
+      row: 4
+      itemType: wood
+    }
+  }
+  incomingTypes: {
+    
+  }
+  outgoingTypes: {
+    
+  }
+  crew: {
+    {
+      name: Arthur
+      health: 10
+      maxHealth: 10
+      col: 1
+      row: 3
+    }
+  }
+}
+stations: {
+  {
+    name: Gluttony
+    x: 136
+    y: 551
+    government: Theocracy
+    techLevel: Post-Industrial
+    police: 4
+    pirates: 1
+    illegalTypes: {
+      games
+      firearms
+      narcotics
+    }
+    exportTypes: {
+      machines
+    }
+    starIsGiant: 0
+    starTypeRow: 0
+    starTypeCol: 0
+    starSize: 0.292346
+    market: {
+      {
+        itemType: water
+        itemPrice: 20
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 105
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 229
+        soldHere: 0
+      }
+      {
+        itemType: ore
+        itemPrice: 469
+        soldHere: 0
+      }
+      {
+        itemType: medicine
+        itemPrice: 614
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 592
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 2248
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 334
+        soldHere: 0
+      }
+      {
+        itemType: firearms
+        itemPrice: 622
+        soldHere: 0
+      }
+      {
+        itemType: narcotics
+        itemPrice: 3681
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Check
+    x: 138
+    y: 362
+    government: Theocracy
+    techLevel: Primitive
+    police: 4
+    pirates: 1
+    illegalTypes: {
+      games
+      firearms
+      narcotics
+    }
+    exportTypes: {
+      wood
+    }
+    starIsGiant: 1
+    starTypeRow: 1
+    starTypeCol: 7
+    starSize: 0.871297
+    market: {
+      {
+        itemType: water
+        itemPrice: 37
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 94
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 219
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 477
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 301
+        soldHere: 0
+      }
+      {
+        itemType: machines
+        itemPrice: 1085
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 3032
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 299
+        soldHere: 0
+      }
+      {
+        itemType: firearms
+        itemPrice: 903
+        soldHere: 0
+      }
+      {
+        itemType: narcotics
+        itemPrice: 3613
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Cuppas
+    x: 874
+    y: 511
+    government: Theocracy
+    techLevel: Agrarian
+    police: 4
+    pirates: 1
+    illegalTypes: {
+      games
+      firearms
+      narcotics
+    }
+    exportTypes: {
+      water
+    }
+    starIsGiant: 0
+    starTypeRow: 1
+    starTypeCol: 2
+    starSize: 0.343915
+    market: {
+      {
+        itemType: water
+        itemPrice: 16
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 106
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 296
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 413
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 551
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 713
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 2692
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 463
+        soldHere: 0
+      }
+      {
+        itemType: firearms
+        itemPrice: 1643
+        soldHere: 0
+      }
+      {
+        itemType: narcotics
+        itemPrice: 2415
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Crotch
+    x: 734
+    y: 583
+    government: Theocracy
+    techLevel: Post-Industrial
+    police: 4
+    pirates: 1
+    illegalTypes: {
+      games
+      firearms
+      narcotics
+    }
+    exportTypes: {
+      ore
+    }
+    starIsGiant: 1
+    starTypeRow: 0
+    starTypeCol: 4
+    starSize: 0.778655
+    market: {
+      {
+        itemType: water
+        itemPrice: 35
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 121
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 309
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 299
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 633
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 631
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 1915
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 553
+        soldHere: 0
+      }
+      {
+        itemType: firearms
+        itemPrice: 2031
+        soldHere: 0
+      }
+      {
+        itemType: narcotics
+        itemPrice: 3502
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Unspoiled
+    x: 641
+    y: 199
+    government: Theocracy
+    techLevel: Primitive
+    police: 4
+    pirates: 2
+    illegalTypes: {
+      games
+      firearms
+      narcotics
+    }
+    exportTypes: {
+      ore
+    }
+    starIsGiant: 0
+    starTypeRow: 0
+    starTypeCol: 3
+    starSize: 0.472367
+    market: {
+      {
+        itemType: water
+        itemPrice: 24
+        soldHere: 0
+      }
+      {
+        itemType: food
+        itemPrice: 79
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 322
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 425
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 432
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 375
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 1821
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 304
+        soldHere: 0
+      }
+      {
+        itemType: firearms
+        itemPrice: 1978
+        soldHere: 0
+      }
+      {
+        itemType: narcotics
+        itemPrice: 4026
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Examination
+    x: 712
+    y: 346
+    government: Democracy
+    techLevel: Agrarian
+    police: 2
+    pirates: 3
+    illegalTypes: {
+      firearms
+      narcotics
+    }
+    exportTypes: {
+      robots
+    }
+    starIsGiant: 0
+    starTypeRow: 2
+    starTypeCol: 0
+    starSize: 0.347252
+    market: {
+      {
+        itemType: water
+        itemPrice: 24
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 82
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 182
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 243
+        soldHere: 0
+      }
+      {
+        itemType: medicine
+        itemPrice: 586
+        soldHere: 0
+      }
+      {
+        itemType: machines
+        itemPrice: 961
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 1889
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 310
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 1444
+        soldHere: 0
+      }
+      {
+        itemType: narcotics
+        itemPrice: 3028
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Inane
+    x: 632
+    y: 453
+    government: Technocracy
+    techLevel: Modern
+    police: 3
+    pirates: 4
+    illegalTypes: {
+      robots
+      narcotics
+    }
+    exportTypes: {
+      machines
+    }
+    starIsGiant: 0
+    starTypeRow: 0
+    starTypeCol: 0
+    starSize: 0.422373
+    market: {
+      {
+        itemType: water
+        itemPrice: 27
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 54
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 130
+        soldHere: 0
+      }
+      {
+        itemType: ore
+        itemPrice: 389
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 410
+        soldHere: 0
+      }
+      {
+        itemType: machines
+        itemPrice: 526
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 5441
+        soldHere: 0
+      }
+      {
+        itemType: games
+        itemPrice: 261
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 486
+        soldHere: 1
+      }
+      {
+        itemType: narcotics
+        itemPrice: 3645
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Swarm
+    x: 340
+    y: 495
+    government: Democracy
+    techLevel: Primitive
+    police: 2
+    pirates: 4
+    illegalTypes: {
+      firearms
+      narcotics
+    }
+    exportTypes: {
+      games
+    }
+    starIsGiant: 0
+    starTypeRow: 2
+    starTypeCol: 2
+    starSize: 0.346853
+    market: {
+      {
+        itemType: water
+        itemPrice: 21
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 78
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 266
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 483
+        soldHere: 0
+      }
+      {
+        itemType: medicine
+        itemPrice: 448
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 581
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 1203
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 260
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 1459
+        soldHere: 0
+      }
+      {
+        itemType: narcotics
+        itemPrice: 4044
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Storytellers
+    x: 219
+    y: 570
+    government: Anarchy
+    techLevel: Modern
+    police: 0
+    pirates: 1
+    illegalTypes: {
+      
+    }
+    exportTypes: {
+      machines
+    }
+    starIsGiant: 0
+    starTypeRow: 2
+    starTypeCol: 2
+    starSize: 0.41958
+    market: {
+      {
+        itemType: water
+        itemPrice: 21
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 168
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 232
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 380
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 761
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 437
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 3209
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 189
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 741
+        soldHere: 1
+      }
+      {
+        itemType: narcotics
+        itemPrice: 2194
+        soldHere: 1
+      }
+    }
+  }
+  {
+    name: Sentimentalism
+    x: 547
+    y: 541
+    government: Technocracy
+    techLevel: Modern
+    police: 3
+    pirates: 1
+    illegalTypes: {
+      robots
+      narcotics
+    }
+    exportTypes: {
+      machines
+    }
+    starIsGiant: 0
+    starTypeRow: 2
+    starTypeCol: 3
+    starSize: 0.447626
+    market: {
+      {
+        itemType: water
+        itemPrice: 29
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 82
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 172
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 443
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 717
+        soldHere: 0
+      }
+      {
+        itemType: machines
+        itemPrice: 669
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 3882
+        soldHere: 0
+      }
+      {
+        itemType: games
+        itemPrice: 341
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 775
+        soldHere: 1
+      }
+      {
+        itemType: narcotics
+        itemPrice: 1752
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Games
+    x: 761
+    y: 306
+    government: Democracy
+    techLevel: Agrarian
+    police: 2
+    pirates: 2
+    illegalTypes: {
+      firearms
+      narcotics
+    }
+    exportTypes: {
+      games
+    }
+    starIsGiant: 0
+    starTypeRow: 1
+    starTypeCol: 2
+    starSize: 0.258589
+    market: {
+      {
+        itemType: water
+        itemPrice: 29
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 111
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 308
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 481
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 486
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 935
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 1914
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 151
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 1889
+        soldHere: 0
+      }
+      {
+        itemType: narcotics
+        itemPrice: 2901
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Storefronts
+    x: 112
+    y: 183
+    government: Democracy
+    techLevel: Post-Industrial
+    police: 2
+    pirates: 4
+    illegalTypes: {
+      firearms
+      narcotics
+    }
+    exportTypes: {
+      robots
+    }
+    starIsGiant: 1
+    starTypeRow: 1
+    starTypeCol: 7
+    starSize: 0.905723
+    market: {
+      {
+        itemType: water
+        itemPrice: 26
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 122
+        soldHere: 0
+      }
+      {
+        itemType: wood
+        itemPrice: 158
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 452
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 488
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 546
+        soldHere: 0
+      }
+      {
+        itemType: robots
+        itemPrice: 1897
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 225
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 1672
+        soldHere: 0
+      }
+      {
+        itemType: narcotics
+        itemPrice: 3439
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Margarita
+    x: 740
+    y: 446
+    government: Anarchy
+    techLevel: Post-Industrial
+    police: 0
+    pirates: 1
+    illegalTypes: {
+      
+    }
+    exportTypes: {
+      food
+    }
+    starIsGiant: 0
+    starTypeRow: 2
+    starTypeCol: 2
+    starSize: 0.387404
+    market: {
+      {
+        itemType: water
+        itemPrice: 35
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 89
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 346
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 272
+        soldHere: 0
+      }
+      {
+        itemType: medicine
+        itemPrice: 437
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 841
+        soldHere: 0
+      }
+      {
+        itemType: robots
+        itemPrice: 2503
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 274
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 648
+        soldHere: 1
+      }
+      {
+        itemType: narcotics
+        itemPrice: 2331
+        soldHere: 1
+      }
+    }
+  }
+  {
+    name: Warfare
+    x: 401
+    y: 243
+    government: Anarchy
+    techLevel: Industrial
+    police: 0
+    pirates: 4
+    illegalTypes: {
+      
+    }
+    exportTypes: {
+      ore
+    }
+    starIsGiant: 0
+    starTypeRow: 2
+    starTypeCol: 3
+    starSize: 0.298075
+    market: {
+      {
+        itemType: water
+        itemPrice: 33
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 113
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 313
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 96
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 504
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 612
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 2469
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 198
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 766
+        soldHere: 1
+      }
+      {
+        itemType: narcotics
+        itemPrice: 2105
+        soldHere: 1
+      }
+    }
+  }
+  {
+    name: Scarcer
+    x: 871
+    y: 391
+    government: Technocracy
+    techLevel: Modern
+    police: 2
+    pirates: 4
+    illegalTypes: {
+      robots
+      narcotics
+    }
+    exportTypes: {
+      machines
+    }
+    starIsGiant: 0
+    starTypeRow: 0
+    starTypeCol: 1
+    starSize: 0.264819
+    market: {
+      {
+        itemType: water
+        itemPrice: 31
+        soldHere: 0
+      }
+      {
+        itemType: food
+        itemPrice: 148
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 316
+        soldHere: 0
+      }
+      {
+        itemType: ore
+        itemPrice: 397
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 610
+        soldHere: 0
+      }
+      {
+        itemType: machines
+        itemPrice: 450
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 5462
+        soldHere: 0
+      }
+      {
+        itemType: games
+        itemPrice: 292
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 404
+        soldHere: 1
+      }
+      {
+        itemType: narcotics
+        itemPrice: 3004
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Belting
+    x: 251
+    y: 434
+    government: Anarchy
+    techLevel: Industrial
+    police: 0
+    pirates: 2
+    illegalTypes: {
+      
+    }
+    exportTypes: {
+      food
+    }
+    starIsGiant: 0
+    starTypeRow: 2
+    starTypeCol: 2
+    starSize: 0.361139
+    market: {
+      {
+        itemType: water
+        itemPrice: 23
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 91
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 351
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 314
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 538
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 453
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 2706
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 266
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 994
+        soldHere: 1
+      }
+      {
+        itemType: narcotics
+        itemPrice: 2076
+        soldHere: 1
+      }
+    }
+  }
+  {
+    name: Prejudicial
+    x: 475
+    y: 312
+    government: Theocracy
+    techLevel: Agrarian
+    police: 4
+    pirates: 4
+    illegalTypes: {
+      games
+      firearms
+      narcotics
+    }
+    exportTypes: {
+      food
+    }
+    starIsGiant: 1
+    starTypeRow: 1
+    starTypeCol: 4
+    starSize: 0.737199
+    market: {
+      {
+        itemType: water
+        itemPrice: 25
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 102
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 141
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 253
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 520
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 851
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 3891
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 469
+        soldHere: 0
+      }
+      {
+        itemType: firearms
+        itemPrice: 2518
+        soldHere: 0
+      }
+      {
+        itemType: narcotics
+        itemPrice: 2017
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Soars
+    x: 612
+    y: 582
+    government: Anarchy
+    techLevel: Primitive
+    police: 0
+    pirates: 4
+    illegalTypes: {
+      
+    }
+    exportTypes: {
+      wood
+    }
+    starIsGiant: 1
+    starTypeRow: 2
+    starTypeCol: 6
+    starSize: 0.857974
+    market: {
+      {
+        itemType: water
+        itemPrice: 26
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 126
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 175
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 445
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 525
+        soldHere: 0
+      }
+      {
+        itemType: machines
+        itemPrice: 532
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 1680
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 235
+        soldHere: 0
+      }
+      {
+        itemType: firearms
+        itemPrice: 641
+        soldHere: 1
+      }
+      {
+        itemType: narcotics
+        itemPrice: 1530
+        soldHere: 1
+      }
+    }
+  }
+  {
+    name: Unluckier
+    x: 308
+    y: 122
+    government: Technocracy
+    techLevel: Modern
+    police: 1
+    pirates: 2
+    illegalTypes: {
+      robots
+      narcotics
+    }
+    exportTypes: {
+      machines
+    }
+    starIsGiant: 0
+    starTypeRow: 2
+    starTypeCol: 1
+    starSize: 0.301312
+    market: {
+      {
+        itemType: water
+        itemPrice: 36
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 99
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 188
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 510
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 625
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 640
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 3866
+        soldHere: 0
+      }
+      {
+        itemType: games
+        itemPrice: 192
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 583
+        soldHere: 1
+      }
+      {
+        itemType: narcotics
+        itemPrice: 3211
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Shrews
+    x: 814
+    y: 527
+    government: Democracy
+    techLevel: Modern
+    police: 2
+    pirates: 2
+    illegalTypes: {
+      firearms
+      narcotics
+    }
+    exportTypes: {
+      robots
+    }
+    starIsGiant: 0
+    starTypeRow: 1
+    starTypeCol: 1
+    starSize: 0.275225
+    market: {
+      {
+        itemType: water
+        itemPrice: 17
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 121
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 231
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 307
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 532
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 499
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 752
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 250
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 1810
+        soldHere: 0
+      }
+      {
+        itemType: narcotics
+        itemPrice: 2599
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Radon
+    x: 855
+    y: 588
+    government: Technocracy
+    techLevel: Modern
+    police: 3
+    pirates: 1
+    illegalTypes: {
+      robots
+      narcotics
+    }
+    exportTypes: {
+      machines
+    }
+    starIsGiant: 0
+    starTypeRow: 2
+    starTypeCol: 1
+    starSize: 0.419667
+    market: {
+      {
+        itemType: water
+        itemPrice: 21
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 154
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 288
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 335
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 475
+        soldHere: 0
+      }
+      {
+        itemType: machines
+        itemPrice: 833
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 4742
+        soldHere: 0
+      }
+      {
+        itemType: games
+        itemPrice: 287
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 770
+        soldHere: 0
+      }
+      {
+        itemType: narcotics
+        itemPrice: 1429
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Litigator
+    x: 235
+    y: 137
+    government: Theocracy
+    techLevel: Agrarian
+    police: 4
+    pirates: 4
+    illegalTypes: {
+      games
+      firearms
+      narcotics
+    }
+    exportTypes: {
+      food
+    }
+    starIsGiant: 1
+    starTypeRow: 2
+    starTypeCol: 6
+    starSize: 0.906336
+    market: {
+      {
+        itemType: water
+        itemPrice: 13
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 73
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 262
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 446
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 538
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 815
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 1648
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 369
+        soldHere: 0
+      }
+      {
+        itemType: firearms
+        itemPrice: 1847
+        soldHere: 0
+      }
+      {
+        itemType: narcotics
+        itemPrice: 2054
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Whippersnapper
+    x: 514
+    y: 414
+    government: Anarchy
+    techLevel: Industrial
+    police: 0
+    pirates: 2
+    illegalTypes: {
+      
+    }
+    exportTypes: {
+      ore
+    }
+    starIsGiant: 1
+    starTypeRow: 1
+    starTypeCol: 4
+    starSize: 0.981647
+    market: {
+      {
+        itemType: water
+        itemPrice: 23
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 82
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 206
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 129
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 417
+        soldHere: 0
+      }
+      {
+        itemType: machines
+        itemPrice: 282
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 2189
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 332
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 912
+        soldHere: 1
+      }
+      {
+        itemType: narcotics
+        itemPrice: 2167
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Archives
+    x: 114
+    y: 96
+    government: Anarchy
+    techLevel: Primitive
+    police: 0
+    pirates: 1
+    illegalTypes: {
+      
+    }
+    exportTypes: {
+      ore
+    }
+    starIsGiant: 1
+    starTypeRow: 0
+    starTypeCol: 6
+    starSize: 0.979205
+    market: {
+      {
+        itemType: water
+        itemPrice: 18
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 117
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 241
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 322
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 294
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 851
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 3697
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 275
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 1077
+        soldHere: 0
+      }
+      {
+        itemType: narcotics
+        itemPrice: 2321
+        soldHere: 1
+      }
+    }
+  }
+  {
+    name: Kinds
+    x: 685
+    y: 458
+    government: Anarchy
+    techLevel: Industrial
+    police: 0
+    pirates: 4
+    illegalTypes: {
+      
+    }
+    exportTypes: {
+      water
+    }
+    starIsGiant: 1
+    starTypeRow: 0
+    starTypeCol: 6
+    starSize: 0.801368
+    market: {
+      {
+        itemType: water
+        itemPrice: 20
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 90
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 298
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 296
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 527
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 538
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 1692
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 253
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 759
+        soldHere: 0
+      }
+      {
+        itemType: narcotics
+        itemPrice: 2808
+        soldHere: 1
+      }
+    }
+  }
+  {
+    name: Ponderous
+    x: 188
+    y: 323
+    government: Theocracy
+    techLevel: Post-Industrial
+    police: 4
+    pirates: 2
+    illegalTypes: {
+      games
+      firearms
+      narcotics
+    }
+    exportTypes: {
+      machines
+    }
+    starIsGiant: 1
+    starTypeRow: 2
+    starTypeCol: 5
+    starSize: 0.973827
+    market: {
+      {
+        itemType: water
+        itemPrice: 23
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 131
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 300
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 510
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 296
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 458
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 3231
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 510
+        soldHere: 0
+      }
+      {
+        itemType: firearms
+        itemPrice: 966
+        soldHere: 0
+      }
+      {
+        itemType: narcotics
+        itemPrice: 2302
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Percussion
+    x: 865
+    y: 312
+    government: Democracy
+    techLevel: Industrial
+    police: 2
+    pirates: 2
+    illegalTypes: {
+      firearms
+      narcotics
+    }
+    exportTypes: {
+      machines
+    }
+    starIsGiant: 0
+    starTypeRow: 0
+    starTypeCol: 1
+    starSize: 0.300848
+    market: {
+      {
+        itemType: water
+        itemPrice: 30
+        soldHere: 0
+      }
+      {
+        itemType: food
+        itemPrice: 85
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 217
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 343
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 590
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 438
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 3130
+        soldHere: 1
+      }
+      {
+        itemType: games
+        itemPrice: 284
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 882
+        soldHere: 0
+      }
+      {
+        itemType: narcotics
+        itemPrice: 2114
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Tracts
+    x: 456
+    y: 462
+    government: Democracy
+    techLevel: Primitive
+    police: 3
+    pirates: 0
+    illegalTypes: {
+      firearms
+      narcotics
+    }
+    exportTypes: {
+      machines
+    }
+    starIsGiant: 0
+    starTypeRow: 0
+    starTypeCol: 2
+    starSize: 0.485343
+    market: {
+      {
+        itemType: water
+        itemPrice: 40
+        soldHere: 0
+      }
+      {
+        itemType: food
+        itemPrice: 128
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 307
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 378
+        soldHere: 0
+      }
+      {
+        itemType: medicine
+        itemPrice: 529
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 549
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 2517
+        soldHere: 0
+      }
+      {
+        itemType: games
+        itemPrice: 251
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 1991
+        soldHere: 0
+      }
+      {
+        itemType: narcotics
+        itemPrice: 6845
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Minded
+    x: 268
+    y: 204
+    government: Technocracy
+    techLevel: Modern
+    police: 2
+    pirates: 1
+    illegalTypes: {
+      robots
+      narcotics
+    }
+    exportTypes: {
+      machines
+    }
+    starIsGiant: 0
+    starTypeRow: 2
+    starTypeCol: 2
+    starSize: 0.356997
+    market: {
+      {
+        itemType: water
+        itemPrice: 27
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 122
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 282
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 494
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 337
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 395
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 2490
+        soldHere: 0
+      }
+      {
+        itemType: games
+        itemPrice: 228
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 1109
+        soldHere: 1
+      }
+      {
+        itemType: narcotics
+        itemPrice: 4855
+        soldHere: 0
+      }
+    }
+  }
+  {
+    name: Mullet
+    x: 253
+    y: 353
+    government: Technocracy
+    techLevel: Modern
+    police: 3
+    pirates: 0
+    illegalTypes: {
+      robots
+      narcotics
+    }
+    exportTypes: {
+      machines
+    }
+    starIsGiant: 0
+    starTypeRow: 0
+    starTypeCol: 3
+    starSize: 0.494261
+    market: {
+      {
+        itemType: water
+        itemPrice: 27
+        soldHere: 1
+      }
+      {
+        itemType: food
+        itemPrice: 69
+        soldHere: 1
+      }
+      {
+        itemType: wood
+        itemPrice: 320
+        soldHere: 1
+      }
+      {
+        itemType: ore
+        itemPrice: 339
+        soldHere: 1
+      }
+      {
+        itemType: medicine
+        itemPrice: 541
+        soldHere: 1
+      }
+      {
+        itemType: machines
+        itemPrice: 360
+        soldHere: 1
+      }
+      {
+        itemType: robots
+        itemPrice: 4069
+        soldHere: 0
+      }
+      {
+        itemType: games
+        itemPrice: 215
+        soldHere: 1
+      }
+      {
+        itemType: firearms
+        itemPrice: 1206
+        soldHere: 1
+      }
+      {
+        itemType: narcotics
+        itemPrice: 1989
+        soldHere: 0
+      }
+    }
+  }
+}
+currentStation: Whippersnapper

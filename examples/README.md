@@ -146,3 +146,16 @@ author: {
     xpCost: 7
 }
 ```
+
+## Edge Cases
+
+The [edge-cases.grfon](edge-cases.grfon) file is a reference file for parser implementors and testers.  It covers:
+
+- Backslash-escaping of `;`, `:`, `{`, `}`, `//`, and `\` itself
+- Forcing a numeric-looking string to stay a string with a leading `\`
+- Forcing `null`, `true`, and `false` to remain strings with a leading `\`
+- The `://` exception (URLs need no escaping)
+- Backslash escape sequences: `\t`, `\n`, `\uXXXX`
+- Whitespace trimming around keys and values
+- Empty collections `{}`
+- Mixed keyed and unkeyed values (unkeyed values appear under key `"_"`)
