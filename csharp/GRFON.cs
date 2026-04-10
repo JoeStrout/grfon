@@ -60,39 +60,43 @@ namespace GRFON {
 		/// <param name="str">String.</param>
 		public static string Escape(string str) {
 			if (str == null) return null;
-			// Start by counting how many characters we need to escape.
-			int escapeCount = 0;
-			foreach (char c in str) {
-				if (c == ';' || c == '\\' || c == '\n' || c == '\r' || c == '\t') escapeCount++;
-			}
-			if (escapeCount == 0) return str;
-
-			// Now, allocate a buffer big enough for all the escaping, and loop again,
-			// escaping as we go.
-			char[] buffer = new char[str.Length + escapeCount];
-			int idx = 0;
-			foreach (char c in str) {
+			var sb = new System.Text.StringBuilder(str.Length);
+			for (int i = 0; i < str.Length; i++) {
+				char c = str[i];
 				switch (c) {
-				case ';':
-				case '\\':
-					buffer[idx++] = '\\';
+				case '\\': sb.Append("\\\\"); break;
+				case ';':  sb.Append("\\;");  break;
+				case ':':
+					// The sequence :// is always literal (URL exception).
+					if (i + 2 < str.Length && str[i + 1] == '/' && str[i + 2] == '/') {
+						sb.Append("://");
+						i += 2;
+					} else {
+						sb.Append("\\:");
+					}
 					break;
-				case '\n':
-					buffer[idx++] = '\\';
-					buffer[idx++] = 'n';
-					continue;
-				case '\r':
-					buffer[idx++] = '\\';
-					buffer[idx++] = 'r';
-					continue;
-				case '\t':
-					buffer[idx++] = '\\';
-					buffer[idx++] = 't';
-					continue;
+				case '{':  sb.Append("\\{");  break;
+				case '}':  sb.Append("\\}");  break;
+				case '\b': sb.Append("\\b");  break;
+				case '\t': sb.Append("\\t");  break;
+				case '\n': sb.Append("\\n");  break;
+				case '\f': sb.Append("\\f");  break;
+				case '\r': sb.Append("\\r");  break;
+				case '/':
+					// Escape // (double-slash) to \/\/.
+					if (i + 1 < str.Length && str[i + 1] == '/') {
+						sb.Append("\\/\\/");
+						i++;
+					} else {
+						sb.Append('/');
+					}
+					break;
+				default:
+					sb.Append(c);
+					break;
 				}
-				buffer[idx++] = c;
 			}
-			return new string(buffer, 0, idx);
+			return sb.ToString();
 		}
 	}
 
@@ -856,7 +860,7 @@ namespace GRFON {
 				foreach (string key in keys) {
 					GrfonNode entry = keyedEntries[key];
 					if (entry == null) continue;
-					output.Print(key + ": ", false);
+					output.Print(GrfonOutput.Escape(key) + ": ", false);
 					entry.SerializeTo(output, false, compact);
 				}
 			}
@@ -1000,9 +1004,9 @@ namespace GRFON {
 					return true;
 				}
 
-				if (c == '/' && curPos + 1 < curLine.Length && curLine[curPos++] == '/') {
+				if (c == '/' && curPos + 1 < curLine.Length && curLine[curPos + 1] == '/') {
 					// Start of a comment (//), which extends to end of line.
-					token = curLine.Substring(curPos-1, curLine.Length - curPos + 1);
+					token = curLine.Substring(curPos, curLine.Length - curPos);
 					tokType = TokenType.Comment;
 					curPos = curLine.Length;
 					keyPossible = false;
@@ -1025,7 +1029,7 @@ namespace GRFON {
 				int colonPos = IndexOfKeyValueSeparator(curLine, curPos);
 				if (colonPos >= curPos) {
 					// Found a key.
-					token = curLine.Substring(curPos, colonPos - curPos);
+					token = Unescape(curLine.Substring(curPos, colonPos - curPos).Trim());
 					tokType = TokenType.Keyword;
 					curPos = colonPos;
 				} else {
@@ -1051,39 +1055,45 @@ namespace GRFON {
 			// bail out for strings too short to have any escapes
 			if (str.Length <= 1) return str;
 
-			// and, bail out if our string doesn't contain any backslashes at all
+			// bail out if our string doesn't contain any backslashes at all
 			if (!str.Contains('\\')) return str;
 
-			// now loop over characters, copying into a buffer, unescaping as we go
-			char[] buffer = new char[str.Length];
-			int outIdx = 0;
+			// loop over characters, copying into a StringBuilder, unescaping as we go
+			var sb = new System.Text.StringBuilder(str.Length);
 			for (int i = 0; i < str.Length; i++) {
 				char c = str[i];
 				if (c == '\\' && i + 1 < str.Length) {
 					switch (str[i + 1]) {
-					case 'n':
-						c = '\n';
-						i++;
-						break;
-					case 'r':
-						c = '\r';
-						i++;
-						break;
-					case 't':
-						c = '\t';
-						i++;
-						break;
+					case 'b': sb.Append('\b'); i++; break;
+					case 't': sb.Append('\t'); i++; break;
+					case 'n': sb.Append('\n'); i++; break;
+					case 'f': sb.Append('\f'); i++; break;
+					case 'r': sb.Append('\r'); i++; break;
+					case 'u':
+						// Unicode code point: \uXXXX (exactly 4 hex digits required)
+						if (i + 5 < str.Length) {
+							string hex = str.Substring(i + 2, 4);
+							int codePoint;
+							if (int.TryParse(hex, System.Globalization.NumberStyles.HexNumber,
+							                 null, out codePoint)) {
+								sb.Append((char)codePoint);
+								i += 5;
+								break;
+							}
+						}
+						goto default;
 					default:
-						c = str[i + 1];
+						// Any other character: backslash is consumed, character passes through.
+						sb.Append(str[i + 1]);
 						i++;
 						break;
 					}
+				} else {
+					sb.Append(c);
 				}
-
-				buffer[outIdx++] = c;
 			}
 
-			return new String(buffer, 0, outIdx);
+			return sb.ToString();
 		}
 
 		protected virtual void ReportError(string msg) {
@@ -1177,8 +1187,20 @@ namespace GRFON {
 		}
 			
 		static int IndexOfKeyValueSeparator(string line, int startingAt=0) {
-			// TODO: watch out for and skip escaped colons.   Ignoring that for now.
-			return line.IndexOf(':', startingAt);
+			for (int i = startingAt; i < line.Length; i++) {
+				char c = line[i];
+				if (c == '\\') {
+					i++;  // skip the escaped character
+					continue;
+				}
+				if (c == ':') {
+					// :// is never a key/value separator (URL exception)
+					if (i + 2 < line.Length && line[i + 1] == '/' && line[i + 2] == '/')
+						continue;
+					return i;
+				}
+			}
+			return -1;
 		}
 
 		/// <summary>
@@ -1193,9 +1215,17 @@ namespace GRFON {
 			int lastNonWhitespace = startingAt;
 			while (true) {
 				if (endPos < line.Length && line[endPos] == '\\') {
-					// backslash escape; ignore the next character
+					// backslash escape; skip the next character
 					lastNonWhitespace = endPos;
 					endPos += 2;
+					continue;
+				}
+				// :// is always literal (URL exception) — skip past it so // is not
+				// treated as a comment delimiter here.
+				if (endPos < line.Length && line[endPos] == ':' &&
+				    endPos + 2 < line.Length && line[endPos + 1] == '/' && line[endPos + 2] == '/') {
+					lastNonWhitespace = endPos + 2;
+					endPos += 3;
 					continue;
 				}
 				if (IsValueDelimiter(line, endPos)) {
@@ -1230,13 +1260,26 @@ namespace GRFON {
 		public static void Run() {
 			Console.WriteLine("GRFON");
 
+			// Escape: characters that need escaping
 			System.Diagnostics.Debug.Assert(GrfonOutput.Escape("foo bar") == @"foo bar");
 			System.Diagnostics.Debug.Assert(GrfonOutput.Escape("foo;bar") == @"foo\;bar");
 			System.Diagnostics.Debug.Assert(GrfonOutput.Escape("foo\nbar\\baz") == @"foo\nbar\\baz");
+			System.Diagnostics.Debug.Assert(GrfonOutput.Escape("a:b") == @"a\:b");
+			System.Diagnostics.Debug.Assert(GrfonOutput.Escape("a{b}c") == @"a\{b\}c");
+			System.Diagnostics.Debug.Assert(GrfonOutput.Escape("foo\tbar") == @"foo\tbar");
+			System.Diagnostics.Debug.Assert(GrfonOutput.Escape("foo//bar") == @"foo\/\/bar");
+			// Escape: :// sequences must pass through unmodified
+			System.Diagnostics.Debug.Assert(GrfonOutput.Escape("http://example.com") == "http://example.com");
+			System.Diagnostics.Debug.Assert(GrfonOutput.Escape("https://example.com/path") == "https://example.com/path");
 
+			// Unescape
 			System.Diagnostics.Debug.Assert(GrfonDeserializer.Unescape(@"foo bar") == "foo bar");
 			System.Diagnostics.Debug.Assert(GrfonDeserializer.Unescape(@"foo\;bar") == "foo;bar");
 			System.Diagnostics.Debug.Assert(GrfonDeserializer.Unescape(@"foo\nbar\\baz") == "foo\nbar\\baz");
+			System.Diagnostics.Debug.Assert(GrfonDeserializer.Unescape(@"foo\tbar") == "foo\tbar");
+			System.Diagnostics.Debug.Assert(GrfonDeserializer.Unescape(@"foo\bbar") == "foo\bbar");
+			System.Diagnostics.Debug.Assert(GrfonDeserializer.Unescape(@"caf\u00e9") == "café");
+			System.Diagnostics.Debug.Assert(GrfonDeserializer.Unescape(@"\u263A") == "\u263A");
 
 			GrfonCollection doc = new GrfonCollection();
 			doc["foo"] = new GrfonValue("bar");
@@ -1285,6 +1328,26 @@ namespace GRFON {
 			output = new GrfonBufferOutput();
 			doc.SerializeTo(output);
 			output.DumpToConsole(true);
+
+			// URL values must not be truncated at ://
+			test = "url: https://example.com/path?a=1";
+			doc = GrfonCollection.FromString(test);
+			System.Diagnostics.Debug.Assert(doc.GetString("url") == "https://example.com/path?a=1",
+				"URL value was: " + doc.GetString("url"));
+
+			// A bare URL as an unkeyed value — the C# parser always wraps in a collection
+			test = "https://example.com";
+			GrfonCollection urlColl = GrfonCollection.FromString(test);
+			System.Diagnostics.Debug.Assert(urlColl.ListCount == 1 && urlColl[0].ToString() == "https://example.com",
+				"Bare URL was: " + (urlColl.ListCount > 0 ? urlColl[0].ToString() : "(empty)"));
+
+			// Escaped colon in a key must not split the key early
+			test = @"time\:stamp: 2024";
+			doc = GrfonCollection.FromString(test);
+			System.Diagnostics.Debug.Assert(doc.ContainsKey("time:stamp"),
+				"Key with escaped colon not found");
+
+			Console.WriteLine("All assertions passed.");
 		}
 	}
 	
